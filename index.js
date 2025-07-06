@@ -13,12 +13,12 @@ const userInfo = {
 		street: 'а/с 123',
 	},
 	accessLevel: 'user',
-	getProterties: function (object = this){ 
-        for (const key in object) {
-			const value = object[key];
-			if (typeof value === 'object' && value !== null) {
+	getProterties: function (){ 
+        for (const key in this) {
+			const value = this[key];
+			if (typeof value === 'object') {
 				console.log(`${key}: `); 
-				this.getProterties(value); 
+				console.log(value);
 			}
 			else if (typeof value !== 'function') {
 				console.log(`${key}: ${value}`); 
